@@ -27,7 +27,7 @@ public class formularioController {
 	@Autowired
 	formularioRepository formularioRepository;
 	
-	@GetMapping("/lista-formularios")
+	@GetMapping("/formulario")
 	public List<formulario> getAllFormulario(){
 		return formularioRepository.findAll();
 	}
@@ -56,7 +56,7 @@ public class formularioController {
 		return ResponseEntity.ok().body(forms);
 	}
 	
-	@DeleteMapping("formulario/{id}")
+	@DeleteMapping("/formulario/{id}")
 	public Map<String, Boolean> deleteFormulario(@PathVariable(value="id") Long formularioId)
 		throws ResourceNotFoundException{
 		formulario forms = formularioRepository.findById(formularioId)
