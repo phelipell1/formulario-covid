@@ -11,31 +11,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./formulario-covid-list.component.css']
 })
 export class FormularioCovidListComponent implements OnInit {
-  formulario: any;
+  forms: Observable<Formulario[]>;
 
-  constructor(private formularioCovidService: FormularioCovidService,
-    private router: Router) { }
+  constructor(private  formularioCovidService: FormularioCovidService,
+    private router: Router) {}
 
   ngOnInit() {
     this.reloadData();
   }
 
-  reloadData(){
-    this.formulario = this.formularioCovidService.getFormularioList();
+  reloadData() {
+    this.forms = this.formularioCovidService.getFormularioList();
   }
 
-  deleteFormulario(id_formulario: number){
-    this.formularioCovidService.deleteFormulario(id_formulario)
-    .subscribe(
-      data => {
-        console.log(data);
-        this.reloadData();
-      },
-      error => console.log(error));
+  deleteEmployee(id: number) {
+    this.formularioCovidService.deleteFormulario(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error));
   }
 
-  formularioDetails(id_formulario: number){
-    this.router.navigate(['details',id_formulario]);
+  employeeDetails(id: number){
+    this.router.navigate(['details', id]);
   }
-
 }

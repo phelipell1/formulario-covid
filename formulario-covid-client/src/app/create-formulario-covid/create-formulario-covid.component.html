@@ -2,157 +2,181 @@
   <form (ngSubmit)="onSubmit()">
 
     <div class="container">
-        <h4>AUTO TRIAGEM - QUESTIONÁRIO DA SAÚDE</h4>
+      <h4 style="text-align: center;">AUTO TRIAGEM - QUESTIONÁRIO DA SAÚDE</h4>
     </div>
 
     <div class="container">
-      <p>A FR INCORPORADORA LTDA, está acompanhando de perto a evolução e os impactos do surto do Corona vírus (Covid-19)
+      <p>A FR INCORPORADORA LTDA, está acompanhando de perto a evolução e os impactos do surto do Corona vírus
+        (Covid-19)
         e adotando medidas para proteger a saúde de seus colaboradores e seus familiares.
-      <br>
+        <br>
         Entre essas ações, está a execução de um protocolo de Auto Triagem, que é simples e rápido.
         <br>
         Por isso, pedimos que preencha o questionário para devida liberação as suas atividades laborais.
       </p>
     </div>
-
+    <hr>
     <div class="container">
-        <div class="row">
-            <div class="form-group col-12">
-                <label for="nome_completo">1. Nome Completo:</label>
-                <input type="text" class="form-control form-control-sm" id="nome_completo" required[(ngModel)]="Formulario.nome_completo" name="nome_completo">
-            </div>
-            <div class="form-group col-12">
-              <label for="funcao">2. Função:</label>
-              <select type="text" class="form-control form-control-sm" id="funcao" required[(ngModel)]="Formulario.funcao" name="funcao">
-                <option value="ROLE_GERENTE">Gerente</option>
-                <option value="ROLE_SUPERVISOR">Supervisor</option>
-                <option value="ROLE_ADMINISTRATIVO">Administrativo</option>
-                <option value="ROLE_TECNICO_INFORMATICA">Técnico Informática</option>
-                <option value="ROLE_AUXILIAR_INFORMATICA">Aux. Informátiaca</option>
-                <option value="ROLE_ASSISTENTE_ADMINISTRATIVO">Assistente Administrativo</option>
-                <option value="ROLE_AXILIAR_LIMPEZA">Aux. Limpeza</option>
-              </select>
-            </div>
+      <div class="row">
 
-          <div class="form-group col-12">
-            <label for="temperatura_corporal">3. Temperatura corporal nesta data</label>
-            <input type="text" class="form-control form-control-sm" id="temperatura_corporal" required[(ngModel)]="Formulario.temperatura_corporal" name="temperatura_corporal">
+        <div class="form-group col-12">
+          <label for="nomeCompleto">1. Nome Completo:</label>
+          <input type="text" class="form-control form-control-sm" id="nome_completo" required
+            [(ngModel)]="formulario.nome_completo" name="nome_completo">
         </div>
 
         <div class="form-group col-12">
+          <label for="funcao">2. Função:</label>
+          <select type="text" class="form-control form-control-sm" id="funcao" required [(ngModel)]="formulario.funcao"
+            name="funcao">
+            <option value="ROLE_GERENTE">Gerente</option>
+            <option value="ROLE_SUPERVISOR">Supervisor</option>
+            <option value="ROLE_ADMINISTRATIVO">Administrativo</option>
+            <option value="ROLE_TECNICO_INFORMATICA">Técnico Informática</option>
+            <option value="ROLE_AUXILIAR_INFORMATICA">Aux. Informátiaca</option>
+            <option value="ROLE_ASSISTENTE_ADMINISTRATIVO">Assistente Administrativo</option>
+            <option value="ROLE_AXILIAR_LIMPEZA">Aux. Limpeza</option>
+          </select>
+        </div>
 
+        <div class="form-group col-12">
+          <label for="temperatura_corporal">3. Temperatura corporal nesta data</label>
+          <input type="text" class="form-control form-control-sm" id="temperatura_corporal" required
+            [(ngModel)]="formulario.temperatura_corporal" name="temperatura_corporal">
+        </div>
+
+        <div class="form-group col-12">
           <label for="nome_completo">4. Você fez alguma viagem internacional ou nacional nos últimos 14 dias ?:</label>
-
           <div class="form-row align-items-center">
             <div class="col-auto my-1">
-
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="realizou_viagem" required[(ngModel)]="Formulario.realizou_viagem" name="realizou_viagem">
+                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
+                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
                 <label class="form-check-label" for="realizou_viagem">
                   Sim. Para qual local?
                 </label>
               </div>
             </div>
-
             <div class="col-sm-8 my-1">
-              <input type="text" class="form-control form-control-sm" id="local_viagem" required[(ngModel)]="Formulario.local_viagem" name="local_viagem">
+              <input type="text" class="form-control form-control-sm" id="local_viagem" required
+                [(ngModel)]="formulario.local_viagem" name="local_viagem">
             </div>
-
             <div class="col-auto my-1">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="realizou_viagem" required[(ngModel)]="Formulario.realizou_viagem" name="realizou_viagem">
+                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
+                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
                 <label class="form-check-label" for="autoSizingCheck2">
                   Não
                 </label>
               </div>
             </div>
-            
-          </div>
-      </div>
-
-      <div class="form-group col-12">
-
-        <label for="contato_virus">5. Você teve algum contato próximo com qualquer fonte possível de Corona vírus (Covid-19)?
-          Por exemplo, um viajante que esteve em alguma viagem internacional ou nacional nos últimos 14 dias?
-        </label>
-        <div class="row">
-        <div class="col-auto my-1">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="realizou_viagem" required[(ngModel)]="Formulario.realizou_viagem" name="realizou_viagem">
-            <label class="form-check-label" for="realizou_viagem">
-              Sim
-            </label>
           </div>
         </div>
 
-        <div class="col-auto my-1">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="realizou_viagem" required[(ngModel)]="Formulario.realizou_viagem" name="realizou_viagem">
-            <label class="form-check-label" for="realizou_viagem">
-              Não
-            </label>
+        <div class="form-group col-12">
+
+          <label for="contato_virus">5. Você teve algum contato próximo com qualquer fonte possível de Corona vírus
+            (Covid-19)?
+            Por exemplo, um viajante que esteve em alguma viagem internacional ou nacional nos últimos 14 dias?
+          </label>
+          <div class="row">
+            <div class="col-auto my-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
+                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <label class="form-check-label" for="realizou_viagem">
+                  Sim
+                </label>
+              </div>
+            </div>
+
+            <div class="col-auto my-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
+                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <label class="form-check-label" for="realizou_viagem">
+                  Não
+                </label>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      </div>
+        <div class="form-group col-12">
+          <label for="">6. Você teve febre (37,8° ou mais) nas últmas 24 horas e ou doeça respiratória aguda com pelo
+            menos <b><u>DOIS</u></b> dos sequintes
+            sintomas abaixo:</label>
 
-      <div class="form-group col-12">
-        <label for="">6. Você teve febre (37,8° ou mais) nas últmas 24 horas e ou doeça respiratória aguda com pelo menos <b><u>DOIS</u></b> dos sequintes
-        sintomas abaixo:</label>
-        
-        <div class="row">
-          <div class="col-auto my-1">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="realizou_viagem" required[(ngModel)]="Formulario.realizou_viagem" name="realizou_viagem">
-              <label class="form-check-label" for="realizou_viagem">
-                Sim
-              </label>
+          <div class="row">
+            <div class="col-auto my-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
+                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <label class="form-check-label" for="realizou_viagem">
+                  Sim
+                </label>
+              </div>
+            </div>
+
+            <div class="col-auto my-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
+                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <label class="form-check-label" for="realizou_viagem">
+                  Não
+                </label>
+              </div>
+            </div>
+
+            <div class="col-auto my-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
+                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <label class="form-check-label" for="realizou_viagem">
+                  Tosse Seca
+                </label>
+              </div>
+            </div>
+
+            <div class="col-auto my-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
+                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <label class="form-check-label" for="realizou_viagem">
+                  Congestão Nasal
+                </label>
+              </div>
+            </div>
+
+            <div class="col-auto my-1">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
+                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <label class="form-check-label" for="realizou_viagem">
+                  Dor de garganta
+                </label>
+              </div>
             </div>
           </div>
-  
-          <div class="col-auto my-1">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="realizou_viagem" required[(ngModel)]="Formulario.realizou_viagem" name="realizou_viagem">
-              <label class="form-check-label" for="realizou_viagem">
-                Não
-              </label>
-            </div>
           </div>
 
-          <div class="col-auto my-1">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="realizou_viagem" required[(ngModel)]="Formulario.realizou_viagem" name="realizou_viagem">
-              <label class="form-check-label" for="realizou_viagem">
-                Tosse Seca
-              </label>
-            </div>
+          <div class="form-group col-12">
+            <p>7. Se o colaborador sentir dois ou mais sintomas dos critérios acima, a entrada ao escritório
+              não será permitida e o mesmo deverá ficar em isolamento social, e caso os sintomas aumentem como
+              falta de ar com dificuldades de respirar, tosse seca intensa e febre acima dos 37° que não passa,
+              orientamos que o mesmo procure ajuda médica e apresente Atestado ao RH.
+            </p>
           </div>
 
-          <div class="col-auto my-1">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="realizou_viagem" required[(ngModel)]="Formulario.realizou_viagem" name="realizou_viagem">
-              <label class="form-check-label" for="realizou_viagem">
-                Congestão Nasal
-              </label>
-            </div>
+          <div class="form-group col-12">
+            <label for="dataCadastro">Data Registro</label>
+            <input type="date" class="form-control form-control-sm" id="dataCadastro" required [(ngModel)]="formulario.dataCadastro" name="dataCadastro">
           </div>
 
-          <div class="col-auto my-1">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="realizou_viagem" required[(ngModel)]="Formulario.realizou_viagem" name="realizou_viagem">
-              <label class="form-check-label" for="realizou_viagem">
-                Dor de garganta
-              </label>
-            </div>
-          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+
+        </div>
       </div>
-
-      <br>
-      <button type="submit" class="btn btn-success">Submit</button>
-      </div>
-      </div>
-    </div>
   </form>
 </div>
 

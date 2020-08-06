@@ -16,29 +16,27 @@ export class CreateFormularioCovidComponent implements OnInit {
   constructor(private formularioService: FormularioCovidService,
     private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   newFormulario(): void {
-
     this.submitted = false;
     this.formulario = new Formulario();
-
   }
 
-  save(){
+  save() {
     this.formularioService.createFormulario(this.formulario)
       .subscribe(data => console.log(data), error => console.log(error));
-      this.formulario = new Formulario();
-      this.gotoList();
+    this.formulario = new Formulario();
+    this.gotoList();
   }
 
-  onSubmit(){
+  onSubmit() {
     this.submitted = true;
-    this.save();
+    this.save();    
   }
 
-  gotoList(){
-    this.router.navigate(['/formulario']);
+  gotoList() {
+    this.router.navigate(['/formularios']);
   }
 }

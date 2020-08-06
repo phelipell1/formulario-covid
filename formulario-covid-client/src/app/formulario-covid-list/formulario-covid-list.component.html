@@ -1,15 +1,24 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-      <h2>Employee List</h2>
+      <h2>Lista Formularios</h2>
     </div>
     <div class="panel-body">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Firstname</th>
+            <th>Nome Completo</th>
+            <th>Data Registro</th>
           </tr>
         </thead>
-        
+        <tbody>
+          <tr *ngFor="let forms of forms | async">
+            <td>{{forms.nome_completo}}</td>
+            <td>{{forms.dataCadastro}}</td>
+            <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Delete</button>
+                <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>

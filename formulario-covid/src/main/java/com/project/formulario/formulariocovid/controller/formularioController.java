@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import com.project.formulario.formulariocovid.exception.ResourceNotFoundExceptio
 import com.project.formulario.formulariocovid.model.formulario;
 import com.project.formulario.formulariocovid.repository.formularioRepository;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/formulario-covid")
 public class formularioController {
@@ -27,16 +29,19 @@ public class formularioController {
 	@Autowired
 	formularioRepository formularioRepository;
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/formulario")
 	public List<formulario> getAllFormulario(){
 		return formularioRepository.findAll();
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/formulario")
 	public formulario newFormulario(@Validated @RequestBody formulario formularios) {
 		return formularioRepository.save(formularios);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/formulario/{id}")
 	public ResponseEntity<formulario> updateFormulario(@PathVariable(name = "id") Long formularioId,
 			@Validated @RequestBody formulario formularioDetalhes) throws ResourceNotFoundException{
@@ -56,6 +61,7 @@ public class formularioController {
 		return ResponseEntity.ok().body(forms);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/formulario/{id}")
 	public Map<String, Boolean> deleteFormulario(@PathVariable(value="id") Long formularioId)
 		throws ResourceNotFoundException{
