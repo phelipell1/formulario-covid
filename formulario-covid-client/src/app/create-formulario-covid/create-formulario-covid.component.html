@@ -50,21 +50,21 @@
           <div class="form-row align-items-center">
             <div class="col-auto my-1">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
-                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <input class="form-check-input" type="checkbox" id="realizou_viagem_true" required
+                  [(ngModel)]="formulario.realizou_viagem" [ngModelOptions]="{standalone: true}">
                 <label class="form-check-label" for="realizou_viagem">
                   Sim. Para qual local?
                 </label>
               </div>
             </div>
             <div class="col-sm-8 my-1">
-              <input type="text" class="form-control form-control-sm" id="local_viagem" required
+              <input type="text" class="form-control form-control-sm" id="local_viagem_false" required
                 [(ngModel)]="formulario.local_viagem" name="local_viagem">
             </div>
             <div class="col-auto my-1">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="realizou_viagem" required
-                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                  [(ngModel)]="formulario.realizou_viagem" [ngModelOptions]="{standalone: false}">
                 <label class="form-check-label" for="autoSizingCheck2">
                   Não
                 </label>
@@ -82,8 +82,8 @@
           <div class="row">
             <div class="col-auto my-1">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
-                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <input class="form-check-input" type="checkbox" id="contato_virus" required
+                  [(ngModel)]="formulario.contato_virus" [ngModelOptions]="{standalone: true}">
                 <label class="form-check-label" for="realizou_viagem">
                   Sim
                 </label>
@@ -92,8 +92,8 @@
 
             <div class="col-auto my-1">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
-                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <input class="form-check-input" type="checkbox" id="contato_virus" required
+                  [(ngModel)]="formulario.contato_virus"[ngModelOptions]="{standalone: false}">
                 <label class="form-check-label" for="realizou_viagem">
                   Não
                 </label>
@@ -111,7 +111,7 @@
             <div class="col-auto my-1">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="realizou_viagem" required
-                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                  [(ngModel)]="formulario.teve_febre" [ngModelOptions]="{standalone: true}">
                 <label class="form-check-label" for="realizou_viagem">
                   Sim
                 </label>
@@ -121,7 +121,7 @@
             <div class="col-auto my-1">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="realizou_viagem" required
-                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                  [(ngModel)]="formulario.teve_febre" teve_febre>
                 <label class="form-check-label" for="realizou_viagem">
                   Não
                 </label>
@@ -131,7 +131,7 @@
             <div class="col-auto my-1">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="realizou_viagem" required
-                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                  [(ngModel)]="formulario.sintomas" name="sintomas">
                 <label class="form-check-label" for="realizou_viagem">
                   Tosse Seca
                 </label>
@@ -141,7 +141,7 @@
             <div class="col-auto my-1">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="realizou_viagem" required
-                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                  [(ngModel)]="formulario.sintomas" name="">
                 <label class="form-check-label" for="realizou_viagem">
                   Congestão Nasal
                 </label>
@@ -150,8 +150,8 @@
 
             <div class="col-auto my-1">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="realizou_viagem" required
-                  [(ngModel)]="formulario.realizou_viagem" name="realizou_viagem">
+                <input class="form-check-input" type="checkbox" id="" required
+                  [(ngModel)]="formulario.sintomas" name="">
                 <label class="form-check-label" for="realizou_viagem">
                   Dor de garganta
                 </label>
