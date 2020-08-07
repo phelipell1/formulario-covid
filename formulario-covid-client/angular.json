@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "formulario-covid-client"
+    }
+  },
+  "defaultProject": "formulario-covid-client",
+  "cli": {
+    "analytics": "b2297b9e-2f3a-452d-99c2-5f3ddfee0a42"
+  }
 }
